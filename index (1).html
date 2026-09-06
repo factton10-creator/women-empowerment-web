@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Women Empowerment Through Digital Skills</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-950:#022c22;
+    --green-900:#064e3b;
+    --green-800:#065f46;
+    --green-700:#059669;
+    --black:#04140e;
+    --cream:#f7f3e9;
+    --cream-dim:#efe8d6;
+    --gold:#cda350;
+    --gold-light:#e6c986;
+    --gold-ink:#8a6a24;
+    --pink:#e07ba0;
+    --pink-deep:#c15380;
+    --pink-ink:#a5386a;
+    --ink-light:#eee7d4;
+    --ink-dim:#c7c0ab;
+    --serif:'Playfair Display', serif;
+    --sans:'Manrope', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    background:var(--cream);
+    color:var(--green-950);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img{display:block; width:100%; height:100%; object-fit:cover;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 32px;}
+  section{position:relative;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(2,44,34,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(205,163,80,0.18);
+    transition:transform .4s ease;
+  }
+  .nav-inner{
+    max-width:1140px; margin:0 auto; padding:16px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{
+    font-family:var(--serif); font-weight:600; font-size:17px;
+    color:var(--gold-light); letter-spacing:.2px;
+  }
+  .brand span{color:var(--pink);}
+  nav ul{list-style:none; display:flex; gap:30px;}
+  nav a{
+    font-size:13.5px; color:var(--ink-dim); font-weight:500;
+    padding:6px 0; border-bottom:1px solid transparent; transition:.2s;
+  }
+  nav a:hover{color:var(--gold-light); border-color:var(--pink);}
+  .nav-toggle{display:none; background:none; border:none; cursor:pointer; padding:4px;}
+  .nav-toggle span{display:block; width:22px; height:2px; background:var(--gold-light); margin:5px 0;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:radial-gradient(1200px 700px at 78% -10%, #0e7a54 0%, var(--green-950) 60%);
+    color:var(--ink-light);
+    padding:150px 0 80px;
+    display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;
+  }
+  .hero-copy .kicker{
+    font-size:13px; color:var(--pink); font-weight:600; letter-spacing:.5px;
+    display:flex; align-items:center; gap:10px; margin-bottom:22px;
+  }
+  .kicker::before{content:''; width:26px; height:1px; background:var(--pink);}
+  .hero h1{
+    font-family:var(--serif); font-weight:600;
+    font-size:clamp(38px,5vw,60px); line-height:1.08;
+    color:var(--gold-light);
+    margin-bottom:22px;
+  }
+  .hero h1 em{font-style:italic; color:var(--pink);}
+  .hero p.lead{
+    font-size:17px; color:var(--ink-dim); max-width:480px; margin-bottom:34px;
+  }
+  .hero-meta{display:flex; gap:34px; flex-wrap:wrap;}
+  .hero-meta div{border-left:2px solid var(--pink); padding-left:14px;}
+  .hero-meta strong{display:block; font-family:var(--serif); font-size:22px; color:var(--gold);}
+  .hero-meta span{font-size:12.5px; color:var(--ink-dim);}
+  .hero-art{position:relative;}
+  .hero-art .frame{
+    border-radius:4px; overflow:hidden; height:460px;
+    border:1px solid rgba(205,163,80,0.35);
+  }
+  .hero-art .float-card{
+    position:absolute; left:-30px; bottom:-26px;
+    background:var(--cream); color:var(--green-950);
+    padding:20px 24px; width:250px; border-radius:4px;
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+    border-left:4px solid var(--pink-deep);
+  }
+  .hero-art .float-card strong{
+    display:block; font-family:var(--serif); font-size:26px; color:var(--gold-ink); margin-bottom:3px;
+  }
+  .hero-art .float-card span{font-size:12.5px; color:var(--green-800);}
+
+  /* ---------- SECTION HEADS ---------- */
+  .head{max-width:640px; margin-bottom:52px;}
+  .head .tag{font-size:12.5px; font-weight:700; color:var(--pink-ink); margin-bottom:10px;}
+  .light .head .tag{color:var(--pink-ink);}
+  .dark .head .tag{color:var(--pink);}
+  .head h2{font-family:var(--serif); font-weight:600; font-size:clamp(28px,3.4vw,40px); line-height:1.16;}
+  .light .head h2{color:var(--gold-ink);}
+  .dark .head h2{color:var(--gold-light);}
+  .head p{margin-top:16px; font-size:15.5px; max-width:560px;}
+  .light .head p{color:var(--green-800);}
+  .dark .head p{color:var(--ink-dim);}
+
+  .light{background:var(--cream); color:var(--green-950); padding:100px 0;}
+  .dark{background:var(--green-950); color:var(--ink-light); padding:100px 0;}
+  .onblack{background:var(--black); color:var(--ink-light); padding:100px 0;}
+
+  /* ---------- CORE IDEA / IMAGE SPLIT ---------- */
+  .split{display:grid; grid-template-columns:.95fr 1.05fr; gap:60px; align-items:center;}
+  .split img{border-radius:4px; height:420px;}
+  .idea-list{list-style:none; margin-top:26px;}
+  .idea-list li{
+    display:flex; gap:14px; padding:14px 0; border-bottom:1px solid rgba(6,95,70,0.12);
+    font-size:15px; color:var(--green-800);
+  }
+  .idea-list li:last-child{border-bottom:none;}
+  .idea-list .dot{
+    width:7px; height:7px; border-radius:50%; background:var(--pink-deep); margin-top:8px; flex-shrink:0;
+  }
+
+  /* ---------- EVIDENCE / STATS ---------- */
+  .stat-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(205,163,80,0.2); margin-top:10px;}
+  .stat-card{background:var(--green-950); padding:34px 26px;}
+  .stat-card .num{font-family:var(--serif); font-size:clamp(30px,3vw,42px); color:var(--gold); font-weight:600;}
+  .stat-card .num span{color:var(--pink);}
+  .stat-card p{font-size:13px; color:var(--ink-dim); margin-top:8px;}
+  .evidence-note{
+    margin-top:44px; padding:26px 30px; border-left:3px solid var(--pink);
+    background:rgba(205,163,80,0.06); max-width:760px;
+  }
+  .evidence-note p{font-size:14.5px; color:var(--ink-dim); line-height:1.7;}
+  .evidence-note .src{margin-top:12px; font-size:12px; color:var(--gold-light); opacity:.75;}
+
+  /* ---------- PROBLEM CARDS ---------- */
+  .problem-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(6,95,70,0.14);}
+  .problem-card{background:var(--cream); padding:30px 26px;}
+  .problem-card .letter{
+    font-family:var(--serif); font-size:26px; color:var(--pink-ink); font-weight:600; margin-bottom:14px;
+  }
+  .problem-card h3{font-size:16.5px; margin-bottom:8px; color:var(--green-900);}
+  .problem-card p{font-size:13.5px; color:var(--green-800);}
+
+  /* ---------- SOLUTION FLOW ---------- */
+  .flow{display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:8px;}
+  .flow-step{position:relative; padding:0 22px 0 0;}
+  .flow-step .n{
+    font-family:var(--serif); font-size:15px; color:var(--pink); border:1px solid var(--pink);
+    width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    margin-bottom:18px;
+  }
+  .flow-step h3{font-size:16.5px; color:var(--gold-light); margin-bottom:8px; letter-spacing:.3px;}
+  .flow-step p{font-size:13.5px; color:var(--ink-dim);}
+  .flow-step::after{
+    content:'\2192'; position:absolute; right:-2px; top:6px; color:var(--pink); font-size:18px; opacity:.7;
+  }
+  .flow-step:last-child::after{display:none;}
+  .flow-note{margin-top:40px; font-size:14px; color:var(--gold-light); font-style:italic; font-family:var(--serif); max-width:600px;}
+
+  /* ---------- MODULES ACCORDION ---------- */
+  .accordion{border-top:1px solid rgba(205,163,80,0.25); margin-top:6px;}
+  .acc-item{border-bottom:1px solid rgba(205,163,80,0.25);}
+  .acc-head{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:24px 4px; cursor:pointer; gap:24px;
+  }
+  .acc-head .left{display:flex; align-items:center; gap:20px;}
+  .acc-head .idx{font-family:var(--serif); color:var(--pink); font-size:15px; width:26px;}
+  .acc-head h3{font-size:18px; color:var(--gold-light); font-weight:600;}
+  .acc-head .sub{font-size:13px; color:var(--ink-dim); margin-top:2px;}
+  .acc-head .chev{
+    color:var(--gold); font-size:18px; transition:transform .3s ease; flex-shrink:0;
+  }
+  .acc-item.open .chev{transform:rotate(135deg);}
+  .acc-body{
+    max-height:0; overflow:hidden; transition:max-height .35s ease;
+  }
+  .acc-body-inner{padding:0 4px 26px 46px; font-size:14.5px; color:var(--ink-dim);}
+  .acc-body-inner ul{margin-top:4px;}
+  .acc-body-inner li{padding:4px 0; list-style:none; position:relative; padding-left:16px;}
+  .acc-body-inner li::before{content:'—'; position:absolute; left:0; color:var(--pink);}
+
+  /* ---------- WEEK TIMELINE ---------- */
+  .week-tabs{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:30px;}
+  .week-tab{
+    padding:10px 16px; border:1px solid rgba(6,95,70,0.25); border-radius:2px;
+    font-size:13px; font-weight:600; color:var(--green-800); cursor:pointer; background:transparent;
+    transition:.2s;
+  }
+  .week-tab.active{background:var(--green-950); color:var(--gold-light); border-color:var(--green-950);}
+  .week-panel{
+    background:var(--green-950); color:var(--ink-light); padding:38px 40px; border-radius:4px;
+    display:none; border-left:4px solid var(--pink-deep);
+  }
+  .week-panel.active{display:block;}
+  .week-panel .wk{font-size:12.5px; color:var(--pink); font-weight:700; margin-bottom:8px;}
+  .week-panel h3{font-family:var(--serif); font-size:26px; color:var(--gold-light); margin-bottom:10px;}
+  .week-panel p{font-size:14.5px; color:var(--ink-dim); max-width:520px;}
+
+  /* ---------- CYBER SAFETY ---------- */
+  .safety-wrap{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;}
+  .safety-list{list-style:none; margin-top:24px;}
+  .safety-list li{
+    display:flex; gap:16px; padding:13px 0; font-size:14.5px; color:var(--ink-dim);
+    border-bottom:1px solid rgba(205,163,80,0.15);
+  }
+  .safety-list li:last-child{border-bottom:none;}
+  .safety-list .ico{color:var(--pink); font-family:var(--serif); font-weight:600; flex-shrink:0;}
+  .golden-rule{
+    margin-top:34px; padding:26px 30px; background:rgba(224,123,160,0.08);
+    border:1px solid rgba(224,123,160,0.35); border-radius:4px;
+  }
+  .golden-rule .label{font-size:11.5px; color:var(--pink); font-weight:700; letter-spacing:.4px; margin-bottom:8px;}
+  .golden-rule p{font-family:var(--serif); font-style:italic; font-size:18px; color:var(--gold-light); line-height:1.5;}
+  .safety-img{border-radius:4px; height:440px; overflow:hidden;}
+
+  /* ---------- ENTREPRENEURSHIP FLOW ---------- */
+  .earn-wrap{display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; align-items:center;}
+  .earn-img{border-radius:4px; height:420px; overflow:hidden;}
+  .earn-flow{margin-top:30px;}
+  .earn-step{display:flex; gap:18px; padding:16px 0; border-bottom:1px solid rgba(6,95,70,0.12);}
+  .earn-step:last-child{border-bottom:none;}
+  .earn-step .n{
+    font-family:var(--serif); color:var(--pink-ink); font-size:20px; font-weight:600; width:30px; flex-shrink:0;
+  }
+  .earn-step h4{font-size:15.5px; color:var(--green-900); margin-bottom:3px;}
+  .earn-step p{font-size:13.5px; color:var(--green-800);}
+
+  /* ---------- MEASURE SUCCESS ---------- */
+  .measure-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(205,163,80,0.2); margin-top:10px;}
+  .measure-card{background:var(--green-950); padding:32px 24px;}
+  .measure-card .q{font-family:var(--serif); font-size:15px; color:var(--gold-light); line-height:1.4; margin-bottom:10px;}
+  .measure-card p{font-size:13px; color:var(--ink-dim);}
+  .measure-track{
+    margin-top:44px; display:flex; align-items:center; gap:0; flex-wrap:wrap;
+    font-size:13px; color:var(--gold-light); font-weight:600;
+  }
+  .measure-track .pt{padding:10px 18px; border:1px solid rgba(205,163,80,0.4); border-radius:20px;}
+  .measure-track .arr{color:var(--pink); padding:0 10px; font-size:16px;}
+
+  /* ---------- CHALLENGES ---------- */
+  .chal-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(6,95,70,0.14); margin-top:10px;}
+  .chal-card{background:var(--cream); padding:28px 24px;}
+  .chal-card h3{font-size:15.5px; color:var(--pink-ink); margin-bottom:8px;}
+  .chal-card p{font-size:13.5px; color:var(--green-800);}
+  .chal-summary{
+    margin-top:36px; padding:24px 28px; background:var(--green-950); color:var(--ink-light);
+    border-radius:4px; font-size:14.5px; max-width:820px;
+  }
+  .chal-summary strong{color:var(--gold-light);}
+
+  /* ---------- CONCLUSION ---------- */
+  .conclusion{background:var(--black); color:var(--ink-light); padding:120px 0; text-align:center;}
+  .conclusion .pull{
+    font-family:var(--serif); font-weight:500; font-style:italic;
+    font-size:clamp(24px,3.4vw,38px); max-width:820px; margin:0 auto 40px;
+    color:var(--gold-light); line-height:1.4;
+  }
+  .conclusion .pull .accent{color:var(--pink);}
+  .pillars{display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-top:30px;}
+  .pillars span{
+    padding:11px 22px; border:1px solid rgba(205,163,80,0.4); border-radius:30px;
+    font-size:13px; letter-spacing:.4px; color:var(--gold);
+  }
+
+  /* ---------- FOOTER / SOURCES ---------- */
+  footer{background:var(--green-950); color:var(--ink-dim); padding:70px 0 34px;}
+  .foot-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:60px;}
+  footer h4{font-family:var(--serif); color:var(--gold-light); font-size:19px; margin-bottom:18px;}
+  .src-list{list-style:none;}
+  .src-list li{font-size:13px; padding:10px 0; border-bottom:1px solid rgba(205,163,80,0.12);}
+  .src-list li:last-child{border-bottom:none;}
+  .src-list .t{color:var(--ink-light); display:block; margin-bottom:2px;}
+  .foot-bottom{
+    margin-top:60px; padding-top:24px; border-top:1px solid rgba(205,163,80,0.14);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:12.5px; color:var(--ink-dim);
+  }
+  .foot-bottom .brand{font-size:14px;}
+
+  @media (max-width:940px){
+    nav{display:none;}
+    .nav-toggle{display:block;}
+    .hero{grid-template-columns:1fr; padding-top:120px;}
+    .hero-art{order:-1;}
+    .split, .safety-wrap, .earn-wrap, .foot-grid{grid-template-columns:1fr; gap:34px;}
+    .stat-grid, .problem-grid, .flow, .measure-grid, .chal-grid{grid-template-columns:repeat(2,1fr);}
+    .flow-step::after{display:none;}
+    .hero-art .float-card{position:static; margin-top:-40px; width:auto;}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 20px;}
+    .stat-grid, .problem-grid, .flow, .measure-grid, .chal-grid{grid-template-columns:1fr;}
+    .hero-meta{gap:20px;}
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="nav-inner">
+    <a class="brand" href="javascript:void(0)" data-target="top">Digital<span>Sakhi</span></a>
+    <nav>
+      <ul>
+        <li><a href="javascript:void(0)" data-target="problem">Problem</a></li>
+        <li><a href="javascript:void(0)" data-target="evidence">Evidence</a></li>
+        <li><a href="javascript:void(0)" data-target="solution">Approach</a></li>
+        <li><a href="javascript:void(0)" data-target="modules">Modules</a></li>
+        <li><a href="javascript:void(0)" data-target="roadmap">Roadmap</a></li>
+        <li><a href="javascript:void(0)" data-target="safety">Safety</a></li>
+        <li><a href="javascript:void(0)" data-target="sources">Sources</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap" style="display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;">
+    <div class="hero-copy">
+      <div class="kicker">College project · IT / digital literacy</div>
+      <h1>Women empowerment<br>through <em>digital skills</em></h1>
+      <p class="lead">A practical, evidence-backed training model that closes the digital gap for women — smartphone and internet basics, safe digital payments, cyber safety, and a path from skills to income.</p>
+      <div class="hero-meta">
+        <div><strong>7.35 Cr</strong><span>Women enrolled under PMGDISHA nationally</span></div>
+        <div><strong>8 weeks</strong><span>Proposed training programme length</span></div>
+        <div><strong>53%+</strong><span>Of PMGDISHA beneficiaries were women</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="frame">
+        <img src="https://images.unsplash.com/photo-1707409066859-a90674383d19?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="A group of women standing together, part of a digital empowerment community">
+      </div>
+      <div class="float-card">
+        <strong>Access · Skills · Safety · Opportunity</strong>
+        <span>The four pillars this project builds on</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="problem">
+  <div class="wrap">
+    <div class="head">
+      <div class="tag">The core idea</div>
+      <h2>Technology access alone doesn't create empowerment</h2>
+      <p>Digital skills are no longer optional for education, work, and everyday services. This project goes beyond teaching women how to use a smartphone — it connects learning to confidence, safety, and real opportunity.</p>
+    </div>
+    <div class="split">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="A group learning together around laptops">
+      <ul class="idea-list">
+        <li><span class="dot"></span>Access information and government services confidently</li>
+        <li><span class="dot"></span>Build employable digital skills for real career paths</li>
+        <li><span class="dot"></span>Use financial services and digital payments with confidence</li>
+        <li><span class="dot"></span>Stay safer from online fraud, phishing, and harassment</li>
+        <li><span class="dot"></span>Explore entrepreneurship and online markets</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="evidence">
+  <div class="wrap">
+    <div class="head">
+      <div class="tag">Evidence, not assumption</div>
+      <h2>India is already investing in digital literacy</h2>
+      <p>Official Government of India data from PMGDISHA shows this is recognised as a major national development need — not merely a technical add-on.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="num" data-count="7.35">0</div><p>Crore candidates enrolled nationally</p></div>
+      <div class="stat-card"><div class="num" data-count="6.39">0</div><p>Crore candidates trained</p></div>
+      <div class="stat-card"><div class="num" data-count="4.78">0</div><p>Crore candidates certified</p></div>
+      <div class="stat-card"><div class="num"><span data-count="53">0</span>%+</div><p>Of beneficiaries were women</p></div>
+    </div>
+    <div class="evidence-note">
+      <p>PMGDISHA's training model covered digital devices, internet use, online communication, citizen services, and digital financial transactions — treating digital literacy as infrastructure for participation, not a niche skill.</p>
+      <div class="src">Sources: Ministry of Electronics &amp; IT / PIB (26 July 2024); Ministry of Women &amp; Child Development / PIB (9 Dec 2022)</div>
+    </div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap">
+    <div class="head">
+      <div class="tag">The problem we're solving</div>
+      <h2>Four gaps stand between access and empowerment</h2>
+      <p>A successful programme has to connect digital learning with confidence, safety, and real-world use — not just device access.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card"><div class="letter">01</div><h3>Device access</h3><p>Not everyone owns or fully controls a personal device.</p></div>
+      <div class="problem-card"><div class="letter">02</div><h3>Skill gap</h3><p>Basic internet and computer knowledge is often limited.</p></div>
+      <div class="problem-card"><div class="letter">03</div><h3>Safety risk</h3><p>Scams, phishing, and online harassment create real fear.</p></div>
+      <div class="problem-card"><div class="letter">04</div><h3>Opportunity gap</h3><p>Many don't know how skills connect to actual jobs.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="solution">
+  <div class="wrap">
+    <div class="head">
+      <div class="tag">Our proposed solution</div>
+      <h2>An 8-week practical digital empowerment programme</h2>
+      <p>Training is hands-on throughout: every participant performs the task themselves, instead of only watching a demonstration.</p>
+    </div>
+    <div class="flow">
+      <div class="flow-step"><div class="n">1</div><h3>Assess</h3><p>Find the current skill level of each participant honestly.</p></div>
+      <div class="flow-step"><div class="n">2</div><h3>Train</h3><p>Teach essential digital skills in a progressive sequence.</p></div>
+      <div class="flow-step"><div class="n">3</div><h3>Practice</h3><p>Apply learning to real-world scenarios, not just theory.</p></div>
+      <div class="flow-step"><div class="n">4</div><h3>Connect</h3><p>Link finished skills to real jobs, income, or services.</p></div>
+    </div>
+    <p class="flow-note">"A programme is only as strong as its weakest link between learning and use."</p>
+  </div>
+</section>
+
+<section class="dark" id="modules">
+  <div class="wrap">
+    <div class="head">
+      <div class="tag">Training modules</div>
+      <h2>A progressive pathway from basics to livelihood</h2>
+      <p>Five modules, each building on the last — click a module to see what it covers.</p>
+    </div>
+    <div class="accordion" id="accordion">
+
+      <div class="acc-item open">
+        <div class="acc-head">
+          <div class="left"><span class="idx">01</span><div><h3>Digital basics</h3><div class="sub">Smartphone, computer, files and apps</div></div></div>
+          <span class="chev">+</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <ul>
+              <li>Operating a smartphone: settings, apps, and useful services</li>
+              <li>Basic computer operation: keyboard and mouse use</li>
+              <li>Creating, saving, and organising files</li>
+              <li>Using core applications confidently</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-head">
+          <div class="left"><span class="idx">02</span><div><h3>Internet and email</h3><div class="sub">Search, email and online communication</div></div></div>
+          <span class="chev">+</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <ul>
+              <li>Searching for information effectively and evaluating sources</li>
+              <li>Creating and using an email account</li>
+              <li>Downloading and using trustworthy applications</li>
+              <li>Attending online meetings and classes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-head">
+          <div class="left"><span class="idx">03</span><div><h3>Digital finance</h3><div class="sub">UPI awareness, transactions and fraud prevention</div></div></div>
+          <span class="chev">+</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <ul>
+              <li>How digital payments and UPI actually work</li>
+              <li>Reading and checking transaction records</li>
+              <li>Online banking awareness, without ever sharing OTPs</li>
+              <li>Recognising unsafe payment requests</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-head">
+          <div class="left"><span class="idx">04</span><div><h3>Cyber safety</h3><div class="sub">Passwords, phishing, privacy and reporting</div></div></div>
+          <span class="chev">+</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <ul>
+              <li>Building strong, unique passwords</li>
+              <li>Spotting phishing messages and fake job offers</li>
+              <li>Reviewing and tightening privacy settings</li>
+              <li>Knowing where and how to report cybercrime</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-head">
+          <div class="left"><span class="idx">05</span><div><h3>Career skills</h3><div class="sub">Office tools, design, marketing and AI productivity</div></div></div>
+          <span class="chev">+</span>
+        </div>
+        <div class="acc-body">
+          <div class="acc-body-inner">
+            <ul>
+              <li>Office tools: word processing and spreadsheets</li>
+              <li>Basic graphic design for social posts and listings</li>
+              <li>Digital marketing and social media management basics</li>
+              <li>Introductory AI productivity tools</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="roadmap">
+  <div class="wrap">
+    <div class="head">
+      <div class="tag">8-week implementation plan</div>
+      <h2>Designed for a small community or college pilot</h2>
+      <p>Select a week to see what it covers.</p>
+    </div>
+    <div class="week-tabs" id="weekTabs">
+      <button class="week-tab active" data-week="1">Week 1</button>
+      <button class="week-tab" data-week="2">Week 2</button>
+      <button class="week-tab" data-week="3">Week 3</button>
+      <button class="week-tab" data-week="4">Week 4</button>
+      <button class="week-tab" data-week="5">Week 5</button>
+      <button class="week-tab" data-week="6">Week 6</button>
+      <button class="week-tab" data-week="7">Week 7</button>
+      <button class="week-tab" data-week="8">Week 8</button>
+    </div>
+
+    <div class="week-panel active" data-panel="1">
+      <div class="wk">Week 1</div><h3>Baseline survey</h3>
+      <p>Measure the current skill level of every participant honestly, before any training begins, so progress can be measured later.</p>
+    </div>
+    <div class="week-panel" data-panel="2">
+      <div class="wk">Week 2</div><h3>Smartphone skills</h3>
+      <p>Apps, settings, and useful everyday services — the foundation every later module builds on.</p>
+    </div>
+    <div class="week-panel" data-panel="3">
+      <div class="wk">Week 3</div><h3>Computer basics</h3>
+      <p>Keyboard, mouse, and file management: creating, saving, and organising documents.</p>
+    </div>
+    <div class="week-panel" data-panel="4">
+      <div class="wk">Week 4</div><h3>Internet and email</h3>
+      <p>Search, email accounts, and clear, confident online communication.</p>
+    </div>
+    <div class="week-panel" data-panel="5">
+      <div class="wk">Week 5</div><h3>Digital finance</h3>
+      <p>Safe digital payment awareness, UPI basics, and reading transaction records.</p>
+    </div>
+    <div class="week-panel" data-panel="6">
+      <div class="wk">Week 6</div><h3>Cybersecurity</h3>
+      <p>Recognising scams, protecting privacy, and building strong passwords.</p>
+    </div>
+    <div class="week-panel" data-panel="7">
+      <div class="wk">Week 7</div><h3>Career skills</h3>
+      <p>Office tools, basic design, and marketing fundamentals for work or business.</p>
+    </div>
+    <div class="week-panel" data-panel="8">
+      <div class="wk">Week 8</div><h3>Assessment</h3>
+      <p>A practical test and structured feedback session to close the programme.</p>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="safety">
+  <div class="wrap">
+    <div class="head">
+      <div class="tag">Digital empowerment must include safety</div>
+      <h2>Skills without safety awareness can create new risks</h2>
+    </div>
+    <div class="safety-wrap">
+      <div>
+        <ul class="safety-list">
+          <li><span class="ico">01</span>Use strong, unique passwords for every account</li>
+          <li><span class="ico">02</span>Never share OTPs or passwords, even with someone claiming to help</li>
+          <li><span class="ico">03</span>Verify suspicious links and unusually good offers before acting</li>
+          <li><span class="ico">04</span>Review privacy settings on every app regularly</li>
+          <li><span class="ico">05</span>Know where and how to report cybercrime</li>
+        </ul>
+        <div class="golden-rule">
+          <div class="label">The golden rule</div>
+          <p>Never share your OTP, password, or banking information with anyone.</p>
+        </div>
+      </div>
+      <div class="safety-img">
+        <img src="https://images.unsplash.com/photo-1768839720936-87ce3adf2d08?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="A padlock resting on a laptop keyboard, representing cyber safety">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="head">
+      <div class="tag">From skills to income</div>
+      <h2>A simple example of digital entrepreneurship</h2>
+    </div>
+    <div class="earn-wrap">
+      <div class="earn-img">
+        <img src="https://images.unsplash.com/photo-1601121141418-c1caa10a2a0b?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="Handmade beaded necklace, an example of a small craft business">
+      </div>
+      <div>
+        <p style="color:var(--ink-dim); font-size:15px;">Digital skills create more value when learners can apply them to a real income, education, or community need — even a small one.</p>
+        <div class="earn-flow">
+          <div class="earn-step"><div class="n">01</div><div><h4>Product</h4><p>Handmade jewellery, food, or a small service</p></div></div>
+          <div class="earn-step"><div class="n">02</div><div><h4>Digital presence</h4><p>WhatsApp Business and social media listings</p></div></div>
+          <div class="earn-step"><div class="n">03</div><div><h4>Customers</h4><p>Reach that extends beyond the local market</p></div></div>
+          <div class="earn-step"><div class="n">04</div><div><h4>Payment</h4><p>Secure digital payment methods, used confidently</p></div></div>
+          <div class="earn-step"><div class="n">05</div><div><h4>Growth</h4><p>Tracking orders, feedback, and sales over time</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" style="padding-top:0;">
+  <div class="wrap">
+    <div class="head">
+      <div class="tag">Measuring success</div>
+      <h2>Attendance alone is not proof of empowerment</h2>
+      <p>Skills must improve, and be applied, for the programme to matter.</p>
+    </div>
+    <div class="measure-grid">
+      <div class="measure-card"><div class="q">Skill gain</div><p>Can participants perform key digital tasks unassisted?</p></div>
+      <div class="measure-card"><div class="q">Confidence</div><p>Are they more comfortable using technology day to day?</p></div>
+      <div class="measure-card"><div class="q">Safety awareness</div><p>Can they identify common online scams on sight?</p></div>
+      <div class="measure-card"><div class="q">Application</div><p>Are skills actually used for work, study, or business?</p></div>
+    </div>
+    <div class="measure-track">
+      <span class="pt">Before training</span><span class="arr">&rarr;</span>
+      <span class="pt">Training</span><span class="arr">&rarr;</span>
+      <span class="pt">Practical test</span><span class="arr">&rarr;</span>
+      <span class="pt">Follow-up</span>
+    </div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap">
+    <div class="head">
+      <div class="tag">Challenges and honest limitations</div>
+      <h2>A credible project acknowledges what can go wrong</h2>
+    </div>
+    <div class="chal-grid">
+      <div class="chal-card"><h3>Access</h3><p>Some participants may lack devices or stable internet.</p></div>
+      <div class="chal-card"><h3>Language</h3><p>English-only training may exclude some participants.</p></div>
+      <div class="chal-card"><h3>Practice</h3><p>Skills can decline without regular, ongoing use.</p></div>
+      <div class="chal-card"><h3>Safety</h3><p>New users can be especially vulnerable to scams early on.</p></div>
+      <div class="chal-card"><h3>Opportunity</h3><p>Training alone does not guarantee a job or income.</p></div>
+      <div class="chal-card"><h3>Scale</h3><p>A college pilot cannot represent all women in India.</p></div>
+    </div>
+    <div class="chal-summary">Better design = <strong>local language</strong> + <strong>hands-on practice</strong> + <strong>follow-up support</strong> + <strong>safety awareness</strong> + <strong>links to real opportunities</strong>.</div>
+  </div>
+</section>
+
+<section class="conclusion">
+  <div class="wrap">
+    <p class="pull">When women can confidently use technology to learn, earn, communicate, and protect themselves online — digital skills become a practical tool for greater <span class="accent">independence</span> and participation.</p>
+    <div class="pillars">
+      <span>Access</span><span>Skills</span><span>Safety</span><span>Opportunity</span>
+    </div>
+  </div>
+</section>
+
+<footer id="sources">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Women Empowerment Through Digital Skills</h4>
+        <p style="font-size:14px; max-width:420px; color:var(--ink-dim);">A college project on closing the digital gap for women through practical training, safety awareness, and a path to real opportunity. [College Name] &middot; Academic Year 2026&ndash;27.</p>
+      </div>
+      <div>
+        <h4>Sources &amp; evidence</h4>
+        <ul class="src-list">
+          <li><span class="t">Press Information Bureau, Ministry of Electronics &amp; IT (26 Jul 2024)</span>PMGDISHA: 7.35 crore enrolled, 6.39 crore trained, 4.78 crore certified.</li>
+          <li><span class="t">Press Information Bureau, Ministry of Women &amp; Child Development (9 Dec 2022)</span>Government data on digital empowerment of women; over half of PMGDISHA beneficiaries were women.</li>
+          <li><span class="t">TRAI Consultation Paper — Digital Literacy Initiatives in India</span>Overview of PMGDISHA objectives, target groups, and 20-hour training modules.</li>
+          <li><span class="t">PRS Legislative Research (2026)</span>Summary of the Parliamentary Committee report on cybercrime and cyber safety of women.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="brand">Digital<span style="color:var(--pink);">Sakhi</span></span>
+      <span>Bridging the digital divide through practical skills, safety awareness, and opportunity.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // in-page navigation without href anchors (avoids the preview sandbox treating jumps as external navigation)
+  document.querySelectorAll('a[data-target]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = link.dataset.target;
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      if(navEl.style.display === 'block'){ navEl.style.display = 'none'; }
+    });
+  });
+
+  // mobile nav
+  const toggle = document.getElementById('navToggle');
+  const navEl = document.querySelector('nav');
+  toggle.addEventListener('click', () => {
+    navEl.style.display = navEl.style.display === 'block' ? 'none' : 'block';
+    if(navEl.style.display === 'block'){
+      navEl.style.position='absolute'; navEl.style.top='100%'; navEl.style.left='0';
+      navEl.style.right='0'; navEl.style.background='rgba(8,23,18,0.98)'; navEl.style.padding='20px 32px';
+      navEl.querySelector('ul').style.flexDirection='column'; navEl.querySelector('ul').style.gap='16px';
+    }
+  });
+
+  // accordion
+  document.querySelectorAll('.acc-head').forEach(head => {
+    head.addEventListener('click', () => {
+      const item = head.parentElement;
+      const body = item.querySelector('.acc-body');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.acc-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.acc-body').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
+  // set initial open state height
+  window.addEventListener('load', () => {
+    const openItem = document.querySelector('.acc-item.open .acc-body');
+    if(openItem) openItem.style.maxHeight = openItem.scrollHeight + 'px';
+  });
+
+  // week tabs
+  document.querySelectorAll('.week-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const wk = tab.dataset.week;
+      document.querySelectorAll('.week-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.week-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelector('.week-panel[data-panel="'+wk+'"]').classList.add('active');
+    });
+  });
+
+  // count-up stats on scroll into view
+  const counters = document.querySelectorAll('[data-count]');
+  const runCount = el => {
+    const target = parseFloat(el.dataset.count);
+    const isInt = Number.isInteger(target);
+    let cur = 0;
+    const step = target / 40;
+    const tick = () => {
+      cur += step;
+      if(cur >= target){ el.textContent = isInt ? target : target.toFixed(2); return; }
+      el.textContent = isInt ? Math.floor(cur) : cur.toFixed(2);
+      requestAnimationFrame(tick);
+    };
+    tick();
+  };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){ runCount(e.target); io.unobserve(e.target); }
+    });
+  }, {threshold:0.4});
+  counters.forEach(c => io.observe(c));
+
+  // hide header on scroll down, show on scroll up
+  let lastY = window.scrollY;
+  const headerEl = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if(y > lastY && y > 200){ headerEl.style.transform = 'translateY(-100%)'; }
+    else { headerEl.style.transform = 'translateY(0)'; }
+    lastY = y;
+  });
+</script>
+
+</body>
+</html>
